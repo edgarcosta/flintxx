@@ -15,6 +15,8 @@
 #include <cstdlib>
 #include <vector>
 
+#include <gmp.h>
+
 #include "flintxx/evaluation_tools.h"
 #include "flintxx/expression.h"
 #include "flintxx/expression_traits.h"
@@ -23,7 +25,7 @@
 #include "flintxx/ltuple.h"
 #include "flintxx/stdmath.h"
 
-#include "fmpz.h"
+#include <flint/fmpz.h>
 
 #undef clrbit /* no idea where these are coming from */
 #undef setbit
