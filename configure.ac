@@ -29,9 +29,6 @@ AC_LANG([C++])
 # Make sure that we are in the right directory
 AC_CONFIG_SRCDIR(src/flintxx.h)
 
-# Configure headers
-AC_CONFIG_HEADERS(src/flint-config.h)
-
 # Check for C++ compiler
 AC_PROG_CXX
 AC_PROG_CXXCPP
