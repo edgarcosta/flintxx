@@ -1,23 +1,45 @@
-# FLINTXX (maintenance only)
-## C++ interface to [FLINT](https://github.com/flintlib/flint) (Fast Library for Number Theory)
+# flintxx - C++ Wrapper for FLINT
 
-Website: https://flintlib.org
+A C++ wrapper for the [FLINT](https://flintlib.org/) library, providing expression templates and object-oriented interfaces for number theory computations.
 
-Mailing list: https://groups.google.com/g/flint-devel
+## Quick Start
 
-## Overview
-FLINT provides fast algorithms for number theoretic computations. For many
-reasons, it is written in C. Nonetheless, some users prefer object oriented
-syntax. FLINTXX is a set of wrapper C++ classes, together termed flintxx,
-which provide such an object oriented syntax.
-In general, flintxx strives to behave just like the underlying FLINT C, see the documentation for some exceptions.
+### Prerequisites
+- C++17 compatible compiler
+- FLINT library (3.0+)
+- GMP and MPFR libraries
+- CMake (3.10+) or Autotools
 
-## Authors
-The author of this C++ wrapper is Tom Bachmann.
-This was originally part of [FLINT](https://github.com/flintlib/flint)
+### Build with CMake
+```bash
+mkdir build && cd build
+cmake .. -DCMAKE_BUILD_TYPE=Release
+make test_basic test_comprehensive test_vectors_simple
+```
+
+### Build with Autoconf
+```bash
+./bootstrap.sh
+./configure
+make test/test_basic test/test_comprehensive test/test_vectors_simple
+```
+
+### Run Tests
+```bash
+./test/test_basic && ./test/test_comprehensive && ./test/test_vectors_simple
+```
+
+## Documentation
+
+- **API Documentation**: `doc/source/flintxx.rst`
+- **Function Reference**: `doc/source/flintxx_functions.txt`
+- **Working Examples**: `test/test_*.cpp`
+
+## Status
+
+This is a restored version of the flintxx C++ wrapper originally from FLINT. Core functionality (fmpzxx, fmpz_vecxx, fmpz_matxx) works with current FLINT versions. Some advanced features may need API updates for newer FLINT versions.
 
 ## License
 
-FLINTXX is distributed under LGPL 2.1 (GNU Lesser General Public License).
-See the LICENSE file.
+LGPL 2.1+ (same as FLINT). See `gpl-2.0.txt`.
 
