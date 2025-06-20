@@ -21,6 +21,8 @@ AC_PREREQ(2.62)
 
 # Version information
 AC_INIT([flintxx], [3.4.0-dev], [https://github.com/flintlib/flint/issues/], [flintxx], [https://flintlib.org/])
+AM_INIT_AUTOMAKE([foreign])
+LT_INIT
 
 # Basic setup
 AC_CONFIG_AUX_DIR([config])
