@@ -22,13 +22,13 @@ jobs:
       if: matrix.os == 'ubuntu-latest'
       run: |
         sudo apt-get update
-        sudo apt-get install -y libgmp-dev libmpfr-dev libblas-dev liblapack-dev cmake build-essential autoconf
+        sudo apt-get install -y libgmp-dev libmpfr-dev libblas-dev liblapack-dev cmake build-essential autoconf automake
         
     - name: Install dependencies (macOS)
       if: matrix.os == 'macos-latest'
       run: |
         brew update
-        brew install gmp mpfr openblas cmake autoconf
+        brew install gmp mpfr openblas cmake autoconf automake
         
     - name: Build and install FLINT from source
       run: |
