@@ -15,7 +15,7 @@
 #include <string>
 #include <vector>
 
-#include "nmod_mat.h"
+#include <flint/nmod_mat.h>
 
 #include "nmod_vecxx.h"
 #include "fmpz_matxx.h" // for modular reduction

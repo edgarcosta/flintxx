@@ -12,8 +12,9 @@
 #ifndef CXX_FMPZ_VECXX_H
 #define CXX_FMPZ_VECXX_H
 
+#include <flint/fmpz_vec.h>
+
 #include "fmpzxx.h"
-#include "fmpz_vec.h"
 #include "flintxx/vector.h"
 
 namespace flint {

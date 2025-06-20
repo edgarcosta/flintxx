@@ -14,7 +14,7 @@
 
 #include <cstdlib>
 
-#include "fmpq.h"
+#include <flint/fmpq.h>
 
 #include "flintxx/expression.h"
 #include "flintxx/flint_classes.h"

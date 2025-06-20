@@ -12,7 +12,7 @@
 #ifndef PADIC_MATXX_H
 #define PADIC_MATXX_H
 
-#include "padic_mat.h"
+#include <flint/padic_mat.h>
 
 #include "padicxx.h"
 #include "fmpq_matxx.h"

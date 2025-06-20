@@ -14,7 +14,7 @@
 
 #include <algorithm> // std::max
 
-#include "qadic.h"
+#include "flint/qadic.h"
 
 #include "flintxx/expression.h"
 #include "flintxx/flint_classes.h"

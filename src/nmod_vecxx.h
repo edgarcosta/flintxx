@@ -19,7 +19,7 @@
 
 #include <sstream>
 
-#include "nmod_vec.h"
+#include <flint/nmod_vec.h>
 
 // TODO reduce dependencies?
 #include "fmpzxx.h"

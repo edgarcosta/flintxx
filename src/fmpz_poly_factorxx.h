@@ -13,7 +13,7 @@
 #define FMPZ_POLY_FACTORXX_H
 
 
-#include "fmpz_poly.h"
+#include <flint/fmpz_poly.h>
 #include "nmod_polyxx.h"
 
 namespace flint {

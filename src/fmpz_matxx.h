@@ -12,8 +12,8 @@
 #ifndef FMPZ_MATXX_H
 #define FMPZ_MATXX_H FMPZ_MATXX_H
 
-#include "fmpz_mat.h"
-#include "fmpq_mat.h" // fmpq_mat_get_fmpz_mat_mod_fmpz
+#include <flint/fmpz_mat.h>
+#include <flint/fmpq_mat.h> // fmpq_mat_get_fmpz_mat_mod_fmpz
 
 #include "fmpzxx.h"
 #include "fmpz_polyxx.h"

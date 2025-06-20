@@ -12,7 +12,7 @@
 #ifndef ARITHXX_H
 #define ARITHXX_H
 
-#include "arith.h"
+#include <flint/arith.h>
 
 #include "fmpq_polyxx.h"
 #include "fmpqxx.h"

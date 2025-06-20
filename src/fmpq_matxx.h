@@ -12,7 +12,7 @@
 #ifndef FMPQ_MATXX_H
 #define FMPQ_MATXX_H FMPQ_MATXX_H
 
-#include "fmpq_mat.h"
+#include <flint/fmpq_mat.h>
 
 #include "fmpqxx.h"
 #include "fmpz_matxx.h"

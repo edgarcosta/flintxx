@@ -12,8 +12,8 @@
 #ifndef FMPZ_FACTORXX_H
 #define FMPZ_FACTORXX_H
 
-#include "fmpz_factor.h"
-#include "fmpz_vec.h"
+#include <flint/fmpz_factor.h>
+#include <flint/fmpz_vec.h>
 
 #include "flintxx/ltuple.h"
 

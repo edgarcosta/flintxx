@@ -15,7 +15,7 @@
 #include <cstdlib>
 #include <vector>
 
-#include "nmod_poly.h"
+#include <flint/nmod_poly.h>
 
 #include "fmpzxx.h"
 #include "nmod_vecxx.h"

@@ -12,7 +12,7 @@
 #ifndef NMOD_POLY_MATXX_H
 #define NMOD_POLY_MATXX_H
 
-#include "nmod_poly_mat.h"
+#include <flint/nmod_poly_mat.h>
 
 #include "nmod_matxx.h"
 #include "nmod_polyxx.h"

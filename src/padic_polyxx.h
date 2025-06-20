@@ -12,7 +12,7 @@
 #ifndef PADIC_POLYXX_H
 #define PADIC_POLYXX_H
 
-#include "padic_poly.h"
+#include <flint/padic_poly.h>
 
 #include "padicxx.h"
 #include "fmpz_polyxx.h"

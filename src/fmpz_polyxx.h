@@ -15,8 +15,8 @@
 #include <cstdlib>
 #include <string>
 
-#include "flint.h"
-#include "fmpz_poly.h"
+#include <flint/flint.h>
+#include <flint/fmpz_poly.h>
 
 #include "fmpzxx.h"
 #include "fmpz_vecxx.h"

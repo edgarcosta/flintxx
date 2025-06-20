@@ -15,7 +15,7 @@
 #include <algorithm> // std::max
 #include <cstdlib>
 
-#include "padic.h"
+#include <flint/padic.h>
 
 #include "flintxx/expression.h"
 #include "flintxx/flint_classes.h"

@@ -16,7 +16,7 @@
 
 #include <iostream>
 
-#include "../flint.h" // FLINT_MAX and FLINT_MIN
+#include <flint/flint.h> // FLINT_MAX and FLINT_MIN
 
 #include "expression_traits.h"
 #include "mp.h"

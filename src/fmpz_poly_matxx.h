@@ -12,7 +12,7 @@
 #ifndef FMPZ_POLY_MATXX_H
 #define FMPZ_POLY_MATXX_H FMPZ_POLY_MATXX_H
 
-#include "fmpz_poly_mat.h"
+#include <flint/fmpz_poly_mat.h>
 
 #include "fmpz_matxx.h"
 #include "fmpz_polyxx.h"
