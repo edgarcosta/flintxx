@@ -2,9 +2,9 @@ name: Build and Test
 
 on:
   push:
-    branches: [ main, develop, flintxx-fixes-and-tests ]
+    branches: "*"
   pull_request:
-    branches: [ main, develop ]
+    branches: "*"
 
 jobs:
   test:
@@ -32,6 +32,7 @@ jobs:
         
     - name: Build and install FLINT from source
       run: |
+        git clone https://github.com/flintlib/flint.git
         cd flint
         # Bootstrap if configure doesn't exist
         if [ ! -f configure ]; then
@@ -61,8 +62,8 @@ jobs:
           cmake .. -DCMAKE_BUILD_TYPE=Release \
                    -DCMAKE_PREFIX_PATH="/usr/local"
         fi
-        make test_basic test_comprehensive test_vectors_simple
-        ./test/test_basic && ./test/test_comprehensive && ./test/test_vectors_simple
+        make -j$(nproc 2>/dev/null || sysctl -n hw.ncpu)
+        ctest --output-on-failure --verbose
         
     - name: Build and test (Autoconf)
       if: matrix.build-system == 'autoconf'
