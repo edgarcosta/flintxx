@@ -1,0 +1,58 @@
+name: Build and Test
+
+on:
+  push:
+    branches: [ main, develop, flintxx-fixes-and-tests ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  test:
+    name: ${{ matrix.build-system }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        build-system: [cmake, autoconf]
+        
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install dependencies (Ubuntu)
+      if: matrix.os == 'ubuntu-latest'
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libflint-dev libgmp-dev libmpfr-dev cmake build-essential autoconf
+        
+    - name: Install dependencies (macOS)
+      if: matrix.os == 'macos-latest'
+      run: |
+        brew update
+        brew install flint gmp mpfr cmake autoconf
+        
+    - name: Build and test (CMake)
+      if: matrix.build-system == 'cmake'
+      run: |
+        mkdir build && cd build
+        if [ "${{ matrix.os }}" = "macos-latest" ]; then
+          cmake .. -DCMAKE_BUILD_TYPE=Release \
+                   -DCMAKE_PREFIX_PATH="$(brew --prefix)" \
+                   -DCMAKE_CXX_STANDARD=17
+        else
+          cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_STANDARD=17
+        fi
+        make test_basic test_comprehensive test_vectors_simple
+        ./test/test_basic && ./test/test_comprehensive && ./test/test_vectors_simple
+        
+    - name: Build and test (Autoconf)
+      if: matrix.build-system == 'autoconf'
+      run: |
+        ./bootstrap.sh
+        if [ "${{ matrix.os }}" = "macos-latest" ]; then
+          ./configure CPPFLAGS="-I$(brew --prefix)/include" \
+                     LDFLAGS="-L$(brew --prefix)/lib" \
+                     CXX="g++ -std=c++17"
+        else
+          ./configure CXX="g++ -std=c++17"
+        fi
+        make check 
