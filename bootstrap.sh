@@ -1,23 +1,32 @@
-#!/bin/sh
+#!/bin/bash
 
-rm -rf autom4te.cache
+# Bootstrap script for flintxx
+# Generates configure script from configure.ac
 
-autoreconf -f -i -s -v -Wall
+echo "Bootstrapping flintxx build system..."
 
-# The following lines are from Semigroups/Semigroups, written by Max Horn.
-if ! test -x config.guess -a -x config.sub ;
-then
-    automake -acf 2> /dev/null || :
+# Check for required tools
+if ! command -v autoconf &> /dev/null; then
+    echo "Error: autoconf is required but not installed"
+    exit 1
 fi
 
-# There is a second bug in autoconf 2.69 where the generated configure
-# script complains about install-sh not being there (even though it does
-# not actually need it). As a workaround, we just provide an empty file
-# instead. Since newer autoconf versions such as 2.71 are not affected
-# by the bug, we add a test to limit when this workaround is applied
-if fgrep -q ac_aux_dir/install-sh configure ;
-then
-    touch install-sh
+if ! command -v autoheader &> /dev/null; then
+    echo "Error: autoheader is required but not installed"
+    exit 1
 fi
 
-rm -rf autom4te.cache
+# Create config directory if it doesn't exist
+mkdir -p config
+
+# Generate configure script
+echo "Running autoheader..."
+autoheader
+
+echo "Running autoconf..."
+autoconf
+
+# Make sure configure is executable
+chmod +x configure
+
+echo "Bootstrap complete. You can now run ./configure"
