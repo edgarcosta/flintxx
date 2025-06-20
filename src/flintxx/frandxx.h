@@ -12,7 +12,7 @@
 #ifndef CXX_FRANDXX_H
 #define CXX_FRANDXX_H
 
-#include "../flint.h"
+#include <flint/flint.h>
 
 // This class contains a first-class wrapper of flint_rand_t.
 // Note that frandxx is not copyable.
@@ -27,8 +27,8 @@ private:
     frandxx(const frandxx&);
 
 public:
-    frandxx() {flint_randinit(inner);}
-    ~frandxx() {flint_randclear(inner);}
+    frandxx() {flint_rand_init(inner);}
+    ~frandxx() {flint_rand_clear(inner);}
 
     flint_rand_t& _data() {return inner;}
     const flint_rand_t& _data() const {return inner;}
