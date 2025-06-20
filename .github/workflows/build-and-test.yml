@@ -22,13 +22,33 @@ jobs:
       if: matrix.os == 'ubuntu-latest'
       run: |
         sudo apt-get update
-        sudo apt-get install -y libflint-dev libgmp-dev libmpfr-dev cmake build-essential autoconf
+        sudo apt-get install -y libgmp-dev libmpfr-dev libblas-dev liblapack-dev cmake build-essential autoconf
         
     - name: Install dependencies (macOS)
       if: matrix.os == 'macos-latest'
       run: |
         brew update
-        brew install flint gmp mpfr cmake autoconf
+        brew install gmp mpfr openblas cmake autoconf
+        
+    - name: Build and install FLINT from source
+      run: |
+        cd flint
+        # Bootstrap if configure doesn't exist
+        if [ ! -f configure ]; then
+          ./bootstrap.sh
+        fi
+        if [ "${{ matrix.os }}" = "macos-latest" ]; then
+          ./configure --prefix=/usr/local \
+                     --with-gmp="$(brew --prefix)" \
+                     --with-mpfr="$(brew --prefix)" \
+                     --enable-shared
+        else
+          ./configure --prefix=/usr/local \
+                     --enable-shared
+        fi
+        make -j$(nproc 2>/dev/null || sysctl -n hw.ncpu)
+        sudo make install
+        sudo ldconfig 2>/dev/null || true
         
     - name: Build and test (CMake)
       if: matrix.build-system == 'cmake'
@@ -36,10 +56,10 @@ jobs:
         mkdir build && cd build
         if [ "${{ matrix.os }}" = "macos-latest" ]; then
           cmake .. -DCMAKE_BUILD_TYPE=Release \
-                   -DCMAKE_PREFIX_PATH="$(brew --prefix)" \
-                   -DCMAKE_CXX_STANDARD=17
+                   -DCMAKE_PREFIX_PATH="$(brew --prefix);/usr/local"
         else
-          cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_STANDARD=17
+          cmake .. -DCMAKE_BUILD_TYPE=Release \
+                   -DCMAKE_PREFIX_PATH="/usr/local"
         fi
         make test_basic test_comprehensive test_vectors_simple
         ./test/test_basic && ./test/test_comprehensive && ./test/test_vectors_simple
@@ -49,10 +69,10 @@ jobs:
       run: |
         ./bootstrap.sh
         if [ "${{ matrix.os }}" = "macos-latest" ]; then
-          ./configure CPPFLAGS="-I$(brew --prefix)/include" \
-                     LDFLAGS="-L$(brew --prefix)/lib" \
-                     CXX="g++ -std=c++17"
+          ./configure CPPFLAGS="-I$(brew --prefix)/include -I/usr/local/include" \
+                     LDFLAGS="-L$(brew --prefix)/lib -L/usr/local/lib"
         else
-          ./configure CXX="g++ -std=c++17"
+          ./configure CPPFLAGS="-I/usr/local/include" \
+                     LDFLAGS="-L/usr/local/lib"
         fi
         make check 

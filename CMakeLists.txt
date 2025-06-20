@@ -48,14 +48,12 @@ option(BUILD_EXAMPLES "Build examples" ON)
 option(BUILD_TESTS "Build tests" ON)
 option(WITH_NTL "Build with NTL support" OFF)
 
-# Version information - read from FLINT configure.ac
-file(READ "${CMAKE_CURRENT_SOURCE_DIR}/flint/configure.ac" CONFIGURE_CONTENTS)
-string(REGEX MATCH "FLINT_MAJOR_SO=([0-9]*)" _ ${CONFIGURE_CONTENTS})
+# Version information - use simple versioning for packaging
+# Parse the version from VERSION file
+string(REGEX MATCH "([0-9]+)\\.([0-9]+)\\.([0-9]+)" _ ${FLINT_VERSION})
 set(FLINT_MAJOR_SO ${CMAKE_MATCH_1})
-string(REGEX MATCH "FLINT_MINOR_SO=([0-9]*)" _ ${CONFIGURE_CONTENTS})
-set(FLINT_MINOR_SO ${CMAKE_MATCH_1})
-string(REGEX MATCH "FLINT_PATCH_SO=([0-9]*)" _ ${CONFIGURE_CONTENTS})
-set(FLINT_PATCH_SO ${CMAKE_MATCH_1})
+set(FLINT_MINOR_SO ${CMAKE_MATCH_2})
+set(FLINT_PATCH_SO ${CMAKE_MATCH_3})
 
 # Required dependencies
 find_package(GMP REQUIRED)

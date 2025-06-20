@@ -33,17 +33,14 @@ AC_CONFIG_SRCDIR(src/flintxx.h)
 AC_PROG_CXX
 AC_PROG_CXXCPP
 
-# Check C++ standard - require C++11 minimum
-# Add -std=c++11 to CXXFLAGS if not already present
+# Check C++ standard - require C++17 minimum
+# Add -std=c++17 to CXXFLAGS if not already present
 case "$CXXFLAGS" in
-    *-std=c++11*) ;;
-    *-std=c++1y*) ;;
-    *-std=c++14*) ;;
-    *-std=c++1z*) ;;
     *-std=c++17*) ;;
     *-std=c++2a*) ;;
     *-std=c++20*) ;;
-    *) CXXFLAGS="$CXXFLAGS -std=c++11" ;;
+    *-std=c++23*) ;;
+    *) CXXFLAGS="$CXXFLAGS -std=c++17" ;;
 esac
 
 # Check for required dependencies

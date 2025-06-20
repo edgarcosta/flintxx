@@ -64,11 +64,9 @@ if(WITH_NTL)
     target_include_directories(flintxx INTERFACE ${NTL_INCLUDE_DIRS})
 endif()
 
-# Set properties
+# Set properties - INTERFACE libraries don't support VERSION/SOVERSION
 set_target_properties(flintxx PROPERTIES
-    VERSION ${FLINT_MAJOR_SO}.${FLINT_MINOR_SO}.${FLINT_PATCH_SO}
-    SOVERSION ${FLINT_MAJOR_SO}
-    CXX_STANDARD 11
+    CXX_STANDARD 17
     CXX_STANDARD_REQUIRED ON
     CXX_EXTENSIONS OFF
 )
