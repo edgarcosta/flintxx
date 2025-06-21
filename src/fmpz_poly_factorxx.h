@@ -14,6 +14,7 @@
 
 
 #include <flint/fmpz_poly.h>
+#include <flint/fmpz_poly_factor.h>
 #include "nmod_polyxx.h"
 
 namespace flint {
