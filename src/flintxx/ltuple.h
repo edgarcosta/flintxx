@@ -17,6 +17,9 @@
 #ifndef FLINTXX_LTUPLE_H
 #define FLINTXX_LTUPLE_H
 
+#include "flintxx/mp.h"
+#include "flintxx/tuple.h"
+
 #ifndef FLINT_LTUPLE_PLACEHOLDER_NAME
 #define FLINT_LTUPLE_PLACEHOLDER_NAME _
 #endif
