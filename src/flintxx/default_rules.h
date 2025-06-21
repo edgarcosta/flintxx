@@ -129,7 +129,7 @@ struct evaluation<
                   >
               >
           >
-      >
+      >::type>
     : mp::if_<
             traits::is_implemented<binary_expression<
                 typename traits::basetype<Data1>::type,
@@ -373,8 +373,6 @@ struct instantiate_temporaries<Expr, T, typename mp::enable_if<mp::and_<
             .create_temporary();
     }
 };
-
-
 
 } // rules
 } // flint

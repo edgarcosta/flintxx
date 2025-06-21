@@ -22,8 +22,10 @@ bindir = @bindir@
 # Compiler and flags
 CXX = @CXX@
 CXXFLAGS = @CXXFLAGS@ -std=c++17
-CPPFLAGS = @CPPFLAGS@
-LDFLAGS = @LDFLAGS@
+CPPFLAGS = @CPPFLAGS@ -g -O2 -std=c++17
+# Add include paths for flintxx and its dependencies
+CPPFLAGS += -Isrc -Isrc/flintxx
+LDFLAGS = @LDFLAGS@ -L$(prefix)/lib -lmpfr -lgmp -lflint
 LIBS = @LIBS@
 
 # Source directories

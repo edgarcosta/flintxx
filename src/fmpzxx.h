@@ -9,8 +9,8 @@
     (at your option) any later version.  See <https://www.gnu.org/licenses/>.
 */
 
-#ifndef CXX_FMPZXX_H
-#define CXX_FMPZXX_H
+#ifndef FMPZXX_H
+#define FMPZXX_H
 
 #include <cstdlib>
 #include <vector>

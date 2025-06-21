@@ -40,42 +40,41 @@ jobs:
           ./bootstrap.sh
         fi
         if [ "${{ matrix.os }}" = "macos-latest" ]; then
-          ./configure --prefix=${{ github.workspace }}/flint-install \
+          ./configure --prefix=/usr/local \
                      --with-gmp="$(brew --prefix)" \
                      --with-mpfr="$(brew --prefix)" \
                      --enable-shared
         else
-          ./configure --prefix=${{ github.workspace }}/flint-install \
+          ./configure --prefix=/usr/local \
                      --enable-shared
         fi
         make -j$(nproc 2>/dev/null || sysctl -n hw.ncpu)
-        make install
+        sudo make install
+        sudo ldconfig 2>/dev/null || true
         
     - name: Build and test (CMake)
       if: matrix.build-system == 'cmake'
-      env:
-        LD_LIBRARY_PATH: ${{ github.workspace }}/flint-install/lib
-        DYLD_LIBRARY_PATH: ${{ github.workspace }}/flint-install/lib
       run: |
         mkdir build && cd build
-        cmake .. -DCMAKE_BUILD_TYPE=Release \
-                 -DCMAKE_PREFIX_PATH="${{ github.workspace }}/flint-install" \
-                 -DCMAKE_VERBOSE_MAKEFILE=ON
-        make -k -j$(nproc 2>/dev/null || sysctl -n hw.ncpu) VERBOSE=1
+        if [ "${{ matrix.os }}" = "macos-latest" ]; then
+          cmake .. -DCMAKE_BUILD_TYPE=Release \
+                   -DCMAKE_PREFIX_PATH="$(brew --prefix);/usr/local"
+        else
+          cmake .. -DCMAKE_BUILD_TYPE=Release \
+                   -DCMAKE_PREFIX_PATH="/usr/local"
+        fi
+        make -j$(nproc 2>/dev/null || sysctl -n hw.ncpu)
         ctest --output-on-failure --verbose
         
     - name: Build and test (Autoconf)
       if: matrix.build-system == 'autoconf'
-      env:
-        LD_LIBRARY_PATH: ${{ github.workspace }}/flint-install/lib
-        DYLD_LIBRARY_PATH: ${{ github.workspace }}/flint-install/lib
       run: |
         ./bootstrap.sh
         if [ "${{ matrix.os }}" = "macos-latest" ]; then
-          ./configure CPPFLAGS="-I${{ github.workspace }}/flint-install/include -I$(brew --prefix)/include" \
-                     LDFLAGS="-L${{ github.workspace }}/flint-install/lib -L$(brew --prefix)/lib"
+          ./configure CPPFLAGS="-I$(brew --prefix)/include -I/usr/local/include" \
+                     LDFLAGS="-L$(brew --prefix)/lib -L/usr/local/lib"
         else
-          ./configure CPPFLAGS="-I${{ github.workspace }}/flint-install/include" \
-                     LDFLAGS="-L${{ github.workspace }}/flint-install/lib"
+          ./configure CPPFLAGS="-I/usr/local/include" \
+                     LDFLAGS="-L/usr/local/lib"
         fi
-        make -k check 
+        make check 

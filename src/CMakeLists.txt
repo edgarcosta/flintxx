@@ -11,9 +11,11 @@ add_library(flintxx INTERFACE)
 target_include_directories(flintxx
     INTERFACE
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/flintxx>
         $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
         ${GMP_INCLUDE_DIRS}
         ${MPFR_INCLUDE_DIRS}
+        ${FLINT_INCLUDE_DIR}
 )
 
 # Link dependencies for header-only library

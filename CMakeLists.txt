@@ -20,9 +20,9 @@ include(CheckCSourceRuns)
 include(CheckLibraryExists)
 include(TestBigEndian)
 
-# Source of truth for project version - read from FLINT
-file(STRINGS flint/VERSION FLINT_VERSION_FULL)
-string(REGEX MATCH "([0-9]+\.[0-9]+\.[0-9]+)" _ ${FLINT_VERSION_FULL})
+# Source of truth for project version - read from VERSION file
+file(STRINGS VERSION FLINT_VERSION_FULL)
+string(REGEX MATCH "([0-9]+\\.[0-9]+\\.[0-9]+)" _ ${FLINT_VERSION_FULL})
 set(FLINT_VERSION ${CMAKE_MATCH_1})
 
 project(flintxx 

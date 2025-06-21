@@ -14,7 +14,6 @@
 #define FMPZ_MOD_POLYXX_H
 
 #include <flint/fmpz_mod_poly.h>
-#include <flint/fmpz_mod.h>
 
 #include "fmpzxx.h"
 #include "fmpz_polyxx.h"
