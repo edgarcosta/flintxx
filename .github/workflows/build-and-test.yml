@@ -63,7 +63,7 @@ jobs:
           cmake .. -DCMAKE_BUILD_TYPE=Release \
                    -DCMAKE_PREFIX_PATH="/usr/local"
         fi
-        make -j$(nproc 2>/dev/null || sysctl -n hw.ncpu)
+        make -k -j$(nproc 2>/dev/null || sysctl -n hw.ncpu)
         ctest --output-on-failure --verbose
         
     - name: Build and test (Autoconf)
@@ -77,4 +77,4 @@ jobs:
           ./configure CPPFLAGS="-I/usr/local/include" \
                      LDFLAGS="-L/usr/local/lib"
         fi
-        make check 
+        make -k check 
