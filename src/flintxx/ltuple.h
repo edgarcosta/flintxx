@@ -18,14 +18,13 @@
 #define FLINTXX_LTUPLE_H
 
 #include "flintxx/mp.h"
-#include "flintxx/tuple.h"
+#include "tuple.h"
 
 #ifndef FLINT_LTUPLE_PLACEHOLDER_NAME
 #define FLINT_LTUPLE_PLACEHOLDER_NAME _
 #endif
 
 #include "expression.h"
-#include "tuple.h"
 
 namespace flint {
 // For lazy get<n>, this operation type is created.
