@@ -53,6 +53,9 @@ jobs:
         
     - name: Build and test (CMake)
       if: matrix.build-system == 'cmake'
+      env:
+        LD_LIBRARY_PATH: ${{ github.workspace }}/flint-install/lib
+        DYLD_LIBRARY_PATH: ${{ github.workspace }}/flint-install/lib
       run: |
         mkdir build && cd build
         cmake .. -DCMAKE_BUILD_TYPE=Release \
@@ -62,6 +65,9 @@ jobs:
         
     - name: Build and test (Autoconf)
       if: matrix.build-system == 'autoconf'
+      env:
+        LD_LIBRARY_PATH: ${{ github.workspace }}/flint-install/lib
+        DYLD_LIBRARY_PATH: ${{ github.workspace }}/flint-install/lib
       run: |
         ./bootstrap.sh
         if [ "${{ matrix.os }}" = "macos-latest" ]; then
