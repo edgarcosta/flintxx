@@ -59,8 +59,9 @@ jobs:
       run: |
         mkdir build && cd build
         cmake .. -DCMAKE_BUILD_TYPE=Release \
-                 -DCMAKE_PREFIX_PATH="${{ github.workspace }}/flint-install"
-        make -k -j$(nproc 2>/dev/null || sysctl -n hw.ncpu)
+                 -DCMAKE_PREFIX_PATH="${{ github.workspace }}/flint-install" \
+                 -DCMAKE_VERBOSE_MAKEFILE=ON
+        make -k -j$(nproc 2>/dev/null || sysctl -n hw.ncpu) VERBOSE=1
         ctest --output-on-failure --verbose
         
     - name: Build and test (Autoconf)
