@@ -44,7 +44,6 @@ if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
 endif()
 
 option(BUILD_SHARED_LIBS "Build shared libs" ON)
-option(BUILD_EXAMPLES "Build examples" ON)
 option(BUILD_TESTS "Build tests" ON)
 option(WITH_NTL "Build with NTL support" OFF)
 
@@ -91,11 +90,6 @@ endif()
 
 # Add source files
 add_subdirectory(src)
-
-# Add examples if enabled
-if(BUILD_EXAMPLES)
-    add_subdirectory(examples)
-endif()
 
 # Add tests if enabled
 if(BUILD_TESTS)
