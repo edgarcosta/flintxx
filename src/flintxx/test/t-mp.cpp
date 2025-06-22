@@ -9,8 +9,11 @@
     (at your option) any later version.  See <https://www.gnu.org/licenses/>.
 */
 
-#include "flintxx/test/helpers.h"
-#include "flintxx/mp.h"
+#include <iostream>
+
+#include "helpers.h"
+#include <mp.h>
+#include "myint.h"
 
 using namespace flint;
 using namespace mp;

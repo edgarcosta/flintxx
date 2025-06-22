@@ -10,17 +10,23 @@
 */
 
 #ifndef FMPZ_MATXX_H
-#define FMPZ_MATXX_H FMPZ_MATXX_H
+#define FMPZ_MATXX_H
 
-#include "fmpz_mat.h"
-#include "fmpq_mat.h" // fmpq_mat_get_fmpz_mat_mod_fmpz
+#include <flint/fmpz_mat.h>
+#include <flint/fmpq_mat.h> // fmpq_mat_get_fmpz_mat_mod_fmpz
 
-#include "fmpzxx.h"
+#include <flintxx.h>
+#include <fmpzxx.h>
+#include <fmpz_vecxx.h>
+#include <matrix.h>
+#include <ltuple.h>
+#include <stdmath.h>
+
+#include <vector>
+
 #include "fmpz_polyxx.h"
 #include "permxx.h"
 
-#include "flintxx/ltuple.h"
-#include "flintxx/matrix.h"
 #include "flintxx/traits_fwd.h"
 
 // TODO input and output

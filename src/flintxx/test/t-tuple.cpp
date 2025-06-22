@@ -9,11 +9,20 @@
     (at your option) any later version.  See <https://www.gnu.org/licenses/>.
 */
 
+#include <iostream>
+#include <vector>
 #include <set>
 
-#include "flintxx/test/helpers.h"
-#include "flintxx/tuple.h"
-#include "flintxx/mp.h"
+#include <flintxx.h>
+#include <fmpzxx.h>
+#include <fmpqxx.h>
+#include <nmod_polyxx.h>
+
+#include "helpers.h"
+
+#include <tuple.h>
+#include <ltuple.h>
+#include <mp.h>
 
 using namespace flint;
 using namespace mp;

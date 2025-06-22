@@ -9,21 +9,27 @@
     (at your option) any later version.  See <https://www.gnu.org/licenses/>.
 */
 
-#ifndef CXX_FMPZXX_H
-#define CXX_FMPZXX_H
+#ifndef FMPZXX_H
+#define FMPZXX_H
 
 #include <cstdlib>
 #include <vector>
+#include <string>
 
-#include "flintxx/evaluation_tools.h"
-#include "flintxx/expression.h"
-#include "flintxx/expression_traits.h"
-#include "flintxx/flint_classes.h"
-#include "flintxx/frandxx.h"
-#include "flintxx/ltuple.h"
-#include "flintxx/stdmath.h"
+#include <flint/fmpz.h>
 
-#include "fmpz.h"
+#include <evaluation_tools.h>
+#include <expression.h>
+#include <flint_classes.h>
+#include <flint_exception.h>
+#include <frandxx.h>
+#include <mp.h>
+#include <rules.h>
+#include <traits.h>
+#include <tuple.h>
+#include <expression_traits.h>
+#include <ltuple.h>
+#include <stdmath.h>
 
 #undef clrbit /* no idea where these are coming from */
 #undef setbit

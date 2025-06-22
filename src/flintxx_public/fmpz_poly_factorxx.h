@@ -12,9 +12,13 @@
 #ifndef FMPZ_POLY_FACTORXX_H
 #define FMPZ_POLY_FACTORXX_H
 
+#include "flint/fmpz_poly_factor.h"
+
+#include "flintxx.h"
+#include "fmpz_polyxx.h"
+#include "fmpzxx.h"
 
 #include "fmpz_poly.h"
-#include "fmpz_poly_factor.h"
 #include "nmod_polyxx.h"
 #include "nmod_poly_factor.h"
 

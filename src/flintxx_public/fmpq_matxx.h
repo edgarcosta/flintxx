@@ -10,16 +10,20 @@
 */
 
 #ifndef FMPQ_MATXX_H
-#define FMPQ_MATXX_H FMPQ_MATXX_H
+#define FMPQ_MATXX_H
 
-#include "fmpq_mat.h"
+#include <flint/fmpq_mat.h>
 
-#include "fmpqxx.h"
-#include "fmpz_matxx.h"
-#include "fmpz_vecxx.h"
+#include <flintxx.h>
+#include <fmpqxx.h>
+#include <fmpz_matxx.h>
+#include <fmpz_vecxx.h>
+#include <ltuple.h>
+#include <matrix.h>
+
+#include <vector>
 
 #include "flintxx/ltuple.h"
-#include "flintxx/matrix.h"
 
 // TODO wrap entry_num, entry_den?
 // TODO numden_rowwise_2

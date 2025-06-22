@@ -12,10 +12,14 @@
 #ifndef PERMXX_H
 #define PERMXX_H
 
-#include "perm.h"
+#include <flint/perm.h>
 
-#include "flintxx/frandxx.h"
-#include "flintxx/mp.h"
+#include <flintxx.h>
+#include <frandxx.h>
+#include <mp.h>
+
+#include <vector>
+#include <stdexcept>
 
 namespace flint {
 class permxx

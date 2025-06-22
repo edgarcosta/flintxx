@@ -9,12 +9,17 @@
     (at your option) any later version.  See <https://www.gnu.org/licenses/>.
 */
 
-#ifndef CXX_FMPZ_VECXX_H
-#define CXX_FMPZ_VECXX_H
+#ifndef FMPZ_VECXX_H
+#define FMPZ_VECXX_H
 
-#include "fmpzxx.h"
-#include "fmpz_vec.h"
-#include "flintxx/vector.h"
+#include <vector>
+#include <stdexcept>
+
+#include <flint/fmpz_vec.h>
+
+#include <flintxx.h>
+#include <fmpzxx.h>
+#include <vector.h>
 
 namespace flint {
 namespace detail {

@@ -15,6 +15,7 @@
 #include <string>
 #include <sstream>
 #include <vector>
+#include <set>
 
 
 // whether or not the compiler suppors __attribute__(__optimize__(..))
@@ -58,17 +59,24 @@ public:
     skippable_exception(const std::string& n) : std::runtime_error(n) {}
 };
 
-#include "flintxx/test/helpers.h"
+#include <flintxx.h>
+#include <fmpzxx.h>
+#include <fmpqxx.h>
+#include <nmod_polyxx.h>
+#include <fmpz_mod_polyxx.h>
+#include <fmpq_polyxx.h>
+#include <fmpz_polyxx.h>
+#include <fmpz_matxx.h>
+#include <nmod_matxx.h>
+#include <nmod_vecxx.h>
 
-#include "fmpz_matxx.h"
-#include "fmpz_polyxx.h"
-#include "fmpzxx.h"
-#include "nmod_matxx.h"
-#include "nmod_polyxx.h"
-#include "nmod_vecxx.h"
+#include "helpers.h"
 
-#include "flintxx/tuple.h"
-#include "flintxx/vector.h"
+#include <rules.h>
+#include <expression_traits.h>
+
+#include <tuple.h>
+#include <vector.h>
 
 // Run a command and recver the output.
 std::string exec(const std::string& cmd)

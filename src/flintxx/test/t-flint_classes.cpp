@@ -10,8 +10,13 @@
 */
 
 #include <iostream>
-#include "flintxx/test/helpers.h"
-#include "fmpzxx.h"
+#include <vector>
+#include <set>
+
+#include "helpers.h"
+
+#include <fmpzxx.h>
+#include <flint_classes.h>
 
 using namespace flint;
 

@@ -12,18 +12,21 @@
 #ifndef NMOD_MATXX_H
 #define NMOD_MATXX_H
 
-#include <string>
-#include <vector>
+#include <flint/nmod_mat.h>
 
-#include "nmod_mat.h"
+#include <flintxx.h>
+#include <nmod_polyxx.h>
+#include <matrix.h>
+#include <permxx.h>
+#include <stdmath.h>
+
+#include <vector>
 
 #include "nmod_vecxx.h"
 #include "fmpz_matxx.h" // for modular reduction
-#include "permxx.h"
 
 #include "flintxx/flint_exception.h"
 #include "flintxx/ltuple.h"
-#include "flintxx/matrix.h"
 
 // TODO addmul
 // TODO default argument for mat_solve_triu etc?

@@ -17,20 +17,20 @@
 #ifndef NMOD_VECXX_H
 #define NMOD_VECXX_H
 
-#include <sstream>
+#include <vector>
+#include <stdexcept>
 
-#include "nmod.h"
-#include "nmod_vec.h"
+#include <flint/nmod_vec.h>
 
-// TODO reduce dependencies?
-#include "fmpzxx.h"
-#include "fmpqxx.h"
+#include <flintxx.h>
+#include <fmpzxx.h>
+#include <fmpqxx.h>
+#include <expression.h>
+#include <vector.h>
 
-#include "flintxx/expression.h"
 #include "flintxx/evaluation_tools.h"
 #include "flintxx/flint_classes.h"
 #include "flintxx/stdmath.h"
-#include "flintxx/vector.h"
 
 namespace flint {
 //////////////////////////////////////////////////////////////////////////////

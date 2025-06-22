@@ -9,16 +9,19 @@
     (at your option) any later version.  See <https://www.gnu.org/licenses/>.
 */
 
-#ifndef FMPQ_POLYXX_H
 #define FMPQ_POLYXX_H
 
-#include <cstdlib>
-#include <string>
+#include "flint/flint.h"
+#include "flint/fmpq_poly.h"
 
-#include "flint.h"
-#include "fmpq_poly.h"
-
+#include "flintxx.h"
 #include "fmpqxx.h"
+#include "fmpz_polyxx.h"
+#include "fmpzxx.h"
+#include "fmpq_matxx.h"
+
+#include <vector>
+#include <stdexcept>
 
 #include "flintxx/expression.h"
 #include "flintxx/flint_classes.h"

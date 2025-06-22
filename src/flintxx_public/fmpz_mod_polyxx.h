@@ -13,15 +13,21 @@
 #ifndef FMPZ_MOD_POLYXX_H
 #define FMPZ_MOD_POLYXX_H
 
-#include "fmpz_mod.h"
-#include "fmpz_mod_poly.h"
+#include <cstdlib>
+#include <string>
 
-#include "fmpzxx.h"
-#include "fmpz_polyxx.h"
-#include "nmod_polyxx.h"
+#include <flint/fmpz_mod.h>
+#include <flint/fmpz_mod_poly.h>
 
-#include "flintxx/expression.h"
-#include "flintxx/flint_classes.h"
+#include <flintxx.h>
+#include <fmpzxx.h>
+#include <fmpz_polyxx.h>
+#include <nmod_polyxx.h>
+#include <expression.h>
+#include <flint_classes.h>
+#include <traits.h>
+#include <traits_fwd.h>
+
 #include "flintxx/flint_exception.h"
 #include "flintxx/frandxx.h"
 #include "flintxx/ltuple.h"

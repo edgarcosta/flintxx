@@ -13,7 +13,7 @@
 // Contrary to other parts of this library, they are tailored very
 // specifically towards FLINT.
 
-#include "../flint.h"
+#include <flint/flint.h>
 #include "mp.h"
 #include "expression.h"
 #include "expression_traits.h"

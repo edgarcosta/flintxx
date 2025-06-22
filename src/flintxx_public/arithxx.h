@@ -12,14 +12,19 @@
 #ifndef ARITHXX_H
 #define ARITHXX_H
 
-#include "arith.h"
+#include <iostream>
 
-#include "fmpq_polyxx.h"
-#include "fmpqxx.h"
-#include "fmpz_matxx.h"
-#include "fmpz_vecxx.h"
-#include "fmpzxx.h"
-#include "nmod_vecxx.h"
+#include <flint/flint.h>
+#include <flint/arith.h>
+#include <flint/fmpz.h>
+
+#include <flintxx.h>
+#include <fmpzxx.h>
+#include <fmpqxx.h>
+#include <fmpq_polyxx.h>
+#include <fmpz_matxx.h>
+#include <fmpz_vecxx.h>
+#include <nmod_vecxx.h>
 
 // TODO namespace arith?
 // TODO arith_hrr_expsum_factored

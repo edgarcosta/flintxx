@@ -9,9 +9,13 @@
     (at your option) any later version.  See <https://www.gnu.org/licenses/>.
 */
 
-#include<sstream>
+#include <iostream>
+#include <sstream>
 
-#include "flintxx/expression.h"
+#include <expression.h>
+#include <fmpzxx.h>
+#include <tuple.h>
+
 #include "flintxx/tuple.h"
 
 #include "flintxx/test/helpers.h"

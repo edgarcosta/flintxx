@@ -12,13 +12,15 @@
 #ifndef FMPZ_POLYXX_H
 #define FMPZ_POLYXX_H
 
-#include <cstdlib>
-#include <string>
+#include "flint/flint.h"
+#include "flint/fmpz_poly.h"
 
-#include "flint.h"
-#include "fmpz_poly.h"
-
+#include "flintxx.h"
 #include "fmpzxx.h"
+#include "fmpqxx.h"
+#include "fmpz_matxx.h"
+#include "nmod_polyxx.h"
+
 #include "fmpz_vecxx.h"
 
 #include "flintxx/expression.h"
@@ -28,6 +30,10 @@
 #include "flintxx/ltuple.h"
 #include "flintxx/traits.h"
 #include "flintxx/traits_fwd.h"
+
+#include <vector>
+#include <stdexcept>
+#include <string>
 
 // TODO exhibit this as a specialisation of a generic poly<fmpzxx>
 // TODO newton basis?

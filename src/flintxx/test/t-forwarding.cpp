@@ -13,12 +13,16 @@
 //           test file.
 
 #include <iostream>
+#include <vector>
+#include <set>
 #include <sstream>
 
-#include "flintxx/forwarding.h"
+#include <forwarding.h>
+#include <fmpzxx.h>
+#include <fmpqxx.h>
 
-#include "flintxx/test/myint.h"
-#include "flintxx/test/helpers.h"
+#include "helpers.h"
+#include "myint.h"
 
 using namespace flint;
 

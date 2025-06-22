@@ -9,12 +9,18 @@
     (at your option) any later version.  See <https://www.gnu.org/licenses/>.
 */
 
-#ifndef QADICXX_H
 #define QADICXX_H
 
-#include <algorithm> // std::max
+#include "flint/flint.h"
+#include "flint/qadic.h"
 
-#include "qadic.h"
+#include "flintxx.h"
+#include "fmpzxx.h"
+#include "fmpqxx.h"
+
+#include <stdexcept>
+
+#include <algorithm> // std::max
 
 #include "flintxx/expression.h"
 #include "flintxx/flint_classes.h"

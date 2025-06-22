@@ -11,17 +11,21 @@
 
 // This file contains helpers for evaluating expression templates.
 
-#ifndef CXX_EVALUATION_TOOLS_H
-#define CXX_EVALUATION_TOOLS_H
+#ifndef EVALUATION_TOOLS_H
+#define EVALUATION_TOOLS_H
 
 #include <iostream>
+#include <type_traits>
+#include <utility>
 
-#include "../flint.h" // FLINT_MAX and FLINT_MIN
+#include <flint/flint.h> // FLINT_MAX and FLINT_MIN
+#include <flint/fmpz.h>  // fmpz_t
 
-#include "expression_traits.h"
-#include "mp.h"
-#include "rules.h"
-#include "tuple.h"
+#include <expression_traits.h>
+#include <mp.h>
+#include <rules.h>
+#include <tuple.h>
+#include <flint_exception.h>
 
 namespace flint {
 namespace mp {

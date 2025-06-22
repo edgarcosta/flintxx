@@ -9,11 +9,13 @@
     (at your option) any later version.  See <https://www.gnu.org/licenses/>.
 */
 
-#include "flintxx/ltuple.h"
-#include "fmpzxx.h"
+#include <iostream>
 
-#include "flintxx/test/helpers.h"
-#include "flintxx/test/myint.h"
+#include <ltuple.h>
+#include <fmpzxx.h>
+
+#include "helpers.h"
+#include "myint.h"
 
 using namespace flint;
 

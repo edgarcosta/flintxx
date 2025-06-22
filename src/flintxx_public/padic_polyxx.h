@@ -12,13 +12,17 @@
 #ifndef PADIC_POLYXX_H
 #define PADIC_POLYXX_H
 
-#include "padic_poly.h"
+#include "flint/padic_poly.h"
 
+#include "flintxx.h"
 #include "padicxx.h"
 #include "fmpz_polyxx.h"
 #include "fmpq_polyxx.h"
 
 #include "flintxx/stdmath.h"
+
+#include <vector>
+#include <stdexcept>
 
 // TODO input and output
 

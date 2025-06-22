@@ -9,10 +9,17 @@
     (at your option) any later version.  See <https://www.gnu.org/licenses/>.
 */
 
-#ifndef CXX_FRANDXX_H
-#define CXX_FRANDXX_H
+#ifndef FRANDXX_H
+#define FRANDXX_H
 
-#include "../flint.h"
+#include <stdexcept>
+
+#include <flint/flint.h>
+#include <flint/fmpz.h>
+#include <gmp.h>
+
+#include <flint_exception.h>
+#include <mp.h>
 
 // This class contains a first-class wrapper of flint_rand_t.
 // Note that frandxx is not copyable.

@@ -9,13 +9,13 @@
     (at your option) any later version.  See <https://www.gnu.org/licenses/>.
 */
 
-#include <sstream>
+#include <iostream>
+#include <vector>
+#include <set>
 
-#include "flintxx/vector.h"
-
-#include "flintxx/test/helpers.h"
-#include "flintxx/test/myint.h"
-#include "fmpz_vecxx.h"
+#include <vector.h>
+#include <fmpz_vecxx.h>
+#include "helpers.h"
 
 using namespace flint;
 

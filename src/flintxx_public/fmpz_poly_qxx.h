@@ -10,16 +10,15 @@
 */
 
 #ifndef FMPZ_POLY_QXX_H
-#define FMPZ_POLY_QXX_H FMPZ_POLY_QXX_H
+#define FMPZ_POLY_QXX_H
 
-#include <cstdlib>
-#include <string>
+#include <flint/flint.h>
+#include <flint/fmpz_poly_q.h>
 
-#include "flint.h"
-#include "fmpz_poly_q.h"
-
-#include "fmpz_polyxx.h"
-#include "fmpqxx.h"
+#include <flintxx.h>
+#include <fmpzxx.h>
+#include <fmpqxx.h>
+#include <fmpz_polyxx.h>
 
 #include "flintxx/expression.h"
 #include "flintxx/flint_classes.h"

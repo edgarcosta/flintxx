@@ -9,16 +9,30 @@
     (at your option) any later version.  See <https://www.gnu.org/licenses/>.
 */
 
-#ifndef CXX_TEST_HELPERS_H
-#define CXX_TEST_HELPERS_H
+#ifndef HELPERS_H
+#define HELPERS_H
 
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <streambuf>
 #include <cstdlib>
+#include <vector>
+#include <set>
+#include <sstream>
 
-#include "flintxx/flint_classes.h"
+#include <flintxx.h>
+#include <fmpzxx.h>
+#include <fmpqxx.h>
+#include <nmod_polyxx.h>
+#include <fmpz_mod_polyxx.h>
+#include <fmpq_polyxx.h>
+#include <fmpz_polyxx.h>
+#include <padicxx.h>
+#include <qadicxx.h>
+#include <flint_classes.h>
+
+#include "myint.h"
 
 #ifndef EXIT_STATEMENT
 #define EXIT_STATEMENT std::exit(1)

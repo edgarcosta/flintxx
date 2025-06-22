@@ -10,9 +10,13 @@
 */
 
 #include <iostream>
+#include <vector>
+#include <set>
 
-#include "permxx.h"
-#include "flintxx/test/helpers.h"
+#include <permxx.h>
+#include <fmpzxx.h>
+
+#include "helpers.h"
 
 using namespace flint;
 

@@ -9,9 +9,20 @@
     (at your option) any later version.  See <https://www.gnu.org/licenses/>.
 */
 
-#include "flintxx/test/helpers.h"
-#include "flintxx/traits.h"
-#include "flintxx/mp.h"
+#include <flintxx.h>
+#include <fmpzxx.h>
+#include <fmpqxx.h>
+#include <nmod_polyxx.h>
+#include <fmpz_mod_polyxx.h>
+#include <fmpq_polyxx.h>
+#include <fmpz_polyxx.h>
+#include <padicxx.h>
+#include <qadicxx.h>
+
+#include "helpers.h"
+
+#include <traits.h>
+#include <mp.h>
 
 using namespace flint;
 using namespace traits;

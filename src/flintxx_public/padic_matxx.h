@@ -12,12 +12,14 @@
 #ifndef PADIC_MATXX_H
 #define PADIC_MATXX_H
 
-#include "padic_mat.h"
+#include "flint/padic_mat.h"
 
+#include "flintxx.h"
 #include "padicxx.h"
-#include "fmpq_matxx.h"
 
 #include "flintxx/matrix.h"
+
+#include <vector>
 
 // TODO input and output
 
