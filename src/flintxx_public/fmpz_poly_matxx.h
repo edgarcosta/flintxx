@@ -10,15 +10,21 @@
 */
 
 #ifndef FMPZ_POLY_MATXX_H
-#define FMPZ_POLY_MATXX_H FMPZ_POLY_MATXX_H
+#define FMPZ_POLY_MATXX_H
 
-#include "fmpz_poly_mat.h"
+#include <flint/fmpz_poly_mat.h>
+
+#include <flintxx.h>
+#include <fmpz_polyxx.h>
+#include <fmpz_matxx.h>
+#include <permxx.h>
+#include <matrix.h>
+#include <stdmath.h>
+
+#include <vector>
 
 #include "fmpz_matxx.h"
-#include "fmpz_polyxx.h"
 #include "permxx.h"
-
-#include "flintxx/matrix.h"
 
 namespace flint {
 FLINT_DEFINE_UNOP(prod)
@@ -254,9 +260,9 @@ namespace rules {
 FLINT_DEFINE_DOIT_COND2(assignment, FMPZ_POLY_MATXX_COND_T, FMPZ_POLY_MATXX_COND_S,
         fmpz_poly_mat_set(to._mat(), from._mat()))
 
-FLINTXX_DEFINE_SWAP(fmpz_poly_matxx, fmpz_poly_mat_swap(e1._mat(), e2._mat()))
+FLINT_DEFINE_SWAP(fmpz_poly_matxx, fmpz_poly_mat_swap(e1._mat(), e2._mat()))
 
-FLINTXX_DEFINE_EQUALS(fmpz_poly_matxx, fmpz_poly_mat_equal(e1._mat(), e2._mat()))
+FLINT_DEFINE_EQUALS(fmpz_poly_matxx, fmpz_poly_mat_equal(e1._mat(), e2._mat()))
 
 FLINT_DEFINE_PRINT_PRETTY_COND_2(FMPZ_POLY_MATXX_COND_S, const char*,
         (fmpz_poly_mat_print(from._mat(), extra), 1))

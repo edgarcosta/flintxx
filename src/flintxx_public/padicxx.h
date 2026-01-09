@@ -9,28 +9,23 @@
     (at your option) any later version.  See <https://www.gnu.org/licenses/>.
 */
 
-#ifndef CXX_PADICXX_H
-#define CXX_PADICXX_H CXX_PADICXX_H
+#ifndef PADICXX_H
+#define PADICXX_H
 
-#include <algorithm> // std::max
 #include <cstdlib>
 
-#include "padic.h"
+#include <flint/padic.h>
 
-#include "flintxx/expression.h"
-#include "flintxx/flint_classes.h"
-#include "flintxx/flint_exception.h"
-#include "flintxx/frandxx.h"
-#include "flintxx/stdmath.h"
-#include "flintxx/traits.h"
-#include "flintxx/tuple.h"
+#include <flintxx.h>
+#include <fmpzxx.h>
+#include <fmpqxx.h>
+#include <expression.h>
+#include <flint_classes.h>
+#include <traits.h>
+#include <tuple.h>
 
-#include "fmpzxx.h"
-#include "fmpqxx.h"
-
-// TODO check codegen ...
-// TODO padic_output_prec does not work on non-padic expressions,
-//      is that a problem?
+#include <stdexcept>
+#include <algorithm> // std::max
 
 namespace flint {
 // function "declarations"
@@ -423,7 +418,7 @@ struct ref_data<padicname, structname>                                        \
     structname* inner;                                                        \
     ctxtype ctx;                                                              \
                                                                               \
-    template<class T>                                                         \
+    template<class T>                                                        
     ref_data(T& o, typename detail::faketemplate<T, padicname>::type* = 0)    \
         : inner(o._data().inner), ctx(o._data().ctx) {}                       \
                                                                               \
@@ -449,11 +444,11 @@ struct srcref_data<padicname, Ref, structname>                                \
     ctxtype ctx;                                                              \
     slong N;                                                                  \
                                                                               \
-    template<class T>                                                         \
+    template<class T>                                                        
     srcref_data(const T& o,                                                   \
             typename detail::faketemplate<T, padicname>::type* = 0)           \
         : inner(o._data().inner), ctx(o._data().ctx), N(o.prec()) {}          \
-    template<class T>                                                         \
+    template<class T>                                                        
     srcref_data(T o, typename detail::faketemplate<T, Ref>::type* = 0)        \
         : inner(o._data().inner), ctx(o._data().ctx), N(o.prec()) {}          \
                                                                               \

@@ -12,11 +12,15 @@
 #ifndef FMPZ_FACTORXX_H
 #define FMPZ_FACTORXX_H
 
-#include "fmpz_factor.h"
-#include "fmpz_vec.h"
-#include "fmpzxx.h"
+#include <vector>
+#include <stdexcept>
 
-#include "flintxx/ltuple.h"
+#include <flint/fmpz.h>
+#include <flint/fmpz_factor.h>
+
+#include <flintxx.h>
+#include <fmpzxx.h>
+#include <ltuple.h>
 
 // TODO codegen
 // TODO factor_pp1 multiple return values
@@ -36,14 +40,14 @@ private:
 
     void copy_init(const fmpz_factorxx_delayed& o)
     {
-	_fmpz_factor_fit_length(inner, o.inner->num);
-	_fmpz_factor_set_length(inner, o.inner->num);
-	inner->sign = o.inner->sign;
-	for(slong i = 0;i < o.inner->num;++i)
-	{
-	    fmpz_set(inner->p + i, o.inner->p + i);
-	    inner->exp[i] = o.inner->exp[i];
-	}
+       _fmpz_factor_fit_length(inner, o.inner->num);
+       _fmpz_factor_set_length(inner, o.inner->num);
+       inner->sign = o.inner->sign;
+       for(slong i = 0;i < o.inner->num;++i)
+       {
+           fmpz_set(inner->p + i, o.inner->p + i);
+           inner->exp[i] = o.inner->exp[i];
+       }
     }
 
 public:
